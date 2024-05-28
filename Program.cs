@@ -25,6 +25,11 @@ namespace ScriptSearcher
                     Console.WriteLine($"Game: {script.Game.Name}");
                     Console.WriteLine($"Script Type: {script.ScriptType}");
                     Console.WriteLine($"Views: {script.Views}");
+                    Console.WriteLine($"Verified: {script.Verified}");
+                    Console.WriteLine($"Key Required: {script.Key}");
+                    Console.WriteLine($"Key Link: {script.KeyLink}");
+                    Console.WriteLine($"Patched: {script.IsPatched}");
+                    Console.WriteLine($"Script: {script.ScriptCode}");
                     Console.WriteLine($"URL: https://scriptblox.com/raw/{script.Slug}");
                     Console.WriteLine();
                 }
@@ -82,11 +87,20 @@ namespace ScriptSearcher
         [JsonProperty("verified")]
         public bool Verified { get; set; }
 
+        [JsonProperty("key")]
+        public bool Key { get; set; }
+
+        [JsonProperty("keyLink")]
+        public string KeyLink { get; set; }
+
         [JsonProperty("views")]
         public int Views { get; set; }
 
         [JsonProperty("scriptType")]
         public string ScriptType { get; set; }
+
+        [JsonProperty("isPatched")]
+        public bool IsPatched { get; set; }
 
         [JsonProperty("createdAt")]
         public DateTime CreatedAt { get; set; }
